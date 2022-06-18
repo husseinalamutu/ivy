@@ -150,7 +150,6 @@
     <span class="n">shape</span><span class="p">:</span> <span class="n">Optional</span><span class="p">[</span><span class="n">Union</span><span class="p">[</span><span class="nb">int</span><span class="p">,</span> <span class="n">Tuple</span><span class="p">[</span><span class="nb">int</span><span class="p">,</span> <span class="o">...</span><span class="p">]]]</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span>
     <span class="o">*</span><span class="p">,</span>
     <span class="n">device</span><span class="p">:</span> <span class="n">Optional</span><span class="p">[</span><span class="n">Union</span><span class="p">[</span><span class="n">ivy</span><span class="o">.</span><span class="n">Device</span><span class="p">,</span> <span class="n">ivy</span><span class="o">.</span><span class="n">NativeDevice</span><span class="p">]]</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span>
-    <span class="n">dtype</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span>
 <span class="p">)</span> <span class="o">-&gt;</span> <span class="n">ivy</span><span class="o">.</span><span class="n">array</span><span class="p">:</span>
     <span class="sd">&quot;&quot;&quot;Draws samples from a uniform distribution. Samples are uniformly distributed over</span>
 <span class="sd">    the half-open interval ``[low, high)`` (includes ``low``, but excludes ``high``). In</span>
@@ -183,8 +182,7 @@
 <span class="sd">    ivy.array(1.89150229)</span>
 
 <span class="sd">    &quot;&quot;&quot;</span>
-    <span class="n">dtype</span> <span class="o">=</span> <span class="n">ivy</span><span class="o">.</span><span class="n">default_dtype</span><span class="p">(</span><span class="n">dtype</span><span class="p">,</span> <span class="n">as_native</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
-    <span class="k">return</span> <span class="n">_cur_backend</span><span class="p">()</span><span class="o">.</span><span class="n">random_uniform</span><span class="p">(</span><span class="n">low</span><span class="p">,</span> <span class="n">high</span><span class="p">,</span> <span class="n">shape</span><span class="p">,</span> <span class="n">device</span><span class="o">=</span><span class="n">device</span><span class="p">,</span> <span class="n">dtype</span><span class="o">=</span><span class="n">dtype</span><span class="p">)</span></div>
+    <span class="k">return</span> <span class="n">_cur_backend</span><span class="p">()</span><span class="o">.</span><span class="n">random_uniform</span><span class="p">(</span><span class="n">low</span><span class="p">,</span> <span class="n">high</span><span class="p">,</span> <span class="n">shape</span><span class="p">,</span> <span class="n">device</span><span class="o">=</span><span class="n">device</span><span class="p">)</span></div>
 
 
 <div class="viewcode-block" id="random_normal"><a class="viewcode-back" href="../../../../functional/ivy/random/random_normal.html#ivy.functional.ivy.random.random_normal">[docs]</a><span class="nd">@outputs_to_ivy_arrays</span>
@@ -318,7 +316,7 @@
     <span class="p">)</span></div>
 
 
-<div class="viewcode-block" id="randint"><a class="viewcode-back" href="../../../../functional/ivy/random/randint.html#ivy.functional.ivy.random.randint">[docs]</a><span class="nd">@to_native_arrays_and_back</span>
+<div class="viewcode-block" id="randint"><a class="viewcode-back" href="../../../../functional/ivy/random/randint.html#ivy.functional.ivy.random.randint">[docs]</a><span class="nd">@outputs_to_ivy_arrays</span>
 <span class="nd">@handle_out_argument</span>
 <span class="nd">@infer_device</span>
 <span class="k">def</span> <span class="nf">randint</span><span class="p">(</span>
